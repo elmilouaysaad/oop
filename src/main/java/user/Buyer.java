@@ -3,13 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package user;
+import exception.*;
 
 /**
  *
  * @author mello
  */
 
-import exception.*;
 
 public class Buyer extends Person {
   
@@ -22,7 +22,7 @@ public class Buyer extends Person {
 
     public void verifyAge() throws UnderAgeException {
         // Verify if the buyer is over 18
-        if (age < 18) {
+        if (super.getAge() < 18) {
             throw new UnderAgeException("Buyer is under 18 years old.");
         }
     }
