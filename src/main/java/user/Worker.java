@@ -1,28 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package user;
 import realestate.*;
-/**
- *
- * @author mello
- */
+
 public class Worker extends Renter {
     private String profession;
 
     public Worker(String name, String address, String phone, int age, String profession) {
-        super( name,  address,  phone, age);
+        super(name, address, phone, age);
         this.profession = profession;
-    }
-
-
-  
-    @Override
-    public void rentProperty(RealEstate realEstate) {
-        // Implementation specific to renting a property for a worker
-        System.out.println(getName() + " is renting property for work purposes.");
-        // Additional logic specific to workers
     }
 
     public String getProfession() {
@@ -34,8 +18,26 @@ public class Worker extends Renter {
     }
 
     @Override
+    public void rentProperty(RealEstate realEstate) {
+        // Implementation specific to renting a property for a worker
+        System.out.println(getName() + " is renting property for work purposes.");
+        // Additional logic specific to workers
+    }
+
+    @Override
     public void displayInformation() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        // Displaying information about the worker
+        System.out.println("Worker Information:");
+        System.out.println("Name: " + getName());
+        System.out.println("Address: " + getAddress());
+        System.out.println("Phone: " + getPhone());
+        System.out.println("Age: " + getAge());
+        System.out.println("Profession: " + profession);
+    }
+
+    // Overriding toString method to provide string representation of Worker object
+    @Override
+    public String toString() {
+        return super.toString() + "\nProfession: " + profession;
     }
 }
-
