@@ -9,7 +9,6 @@ package user;
  * @author mello
  */
 
-import exception.*;
 
 public class Buyer extends Person {
   
@@ -22,15 +21,19 @@ public class Buyer extends Person {
 
     public void verifyAge() throws UnderAgeException {
         // Verify if the buyer is over 18
-        if (age < 18) {
+        if (super.getAge() < 18) {
             throw new UnderAgeException("Buyer is under 18 years old.");
         }
     }
 
     @Override
     public void displayInformation() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        // Displaying information about the worker
+        System.out.println("Worker Information:");
+        System.out.println("Name: " + getName());
+        System.out.println("Address: " + getAddress());
+        System.out.println("Phone: " + getPhone());
+        System.out.println("Age: " + getAge());
     }
-
 }
 
