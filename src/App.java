@@ -6,14 +6,14 @@ import realestate.*;
 import user.*;
 
 
-public class Main {
+public class App {
     private List<Person> Preson;
     private List<User> Users;
     private List<RealEstate> RealEstate;
     private User currentUser;
     private Scanner scanner;
 
-    public Main(){
+    public App(){
 
         this.Preson = new ArrayList<>();
         this.Users = new ArrayList<>();
