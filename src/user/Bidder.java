@@ -1,5 +1,5 @@
 package user;
-import exception.*;
+
 public class Bidder extends Person {
     private double bid;
 

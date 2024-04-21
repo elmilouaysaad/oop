@@ -31,10 +31,10 @@ public class Housekeeper extends Person {
     @Override
     public void displayInformation() {
         System.out.println("Housekeeper Information:");
-        System.out.println("Name: " + getName());
-        System.out.println("Address: " + getAddress());
-        System.out.println("Phone: " + getPhone());
-        System.out.println("Age: " + getAge());
+        System.out.println("Name: " + super.getName());
+        System.out.println("Address: " + super.getAddress());
+        System.out.println("Phone: " + super.getPhone());
+        System.out.println("Age: " + super.getAge());
         System.out.println("Assigned Manager: " + assignedManager.getName());
     }
 

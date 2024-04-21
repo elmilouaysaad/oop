@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package user;
-import exception.*;
+
 
 /**
  *
@@ -24,10 +24,10 @@ public class Buyer extends Person {
     public void displayInformation() {
         // Displaying information about the worker
         System.out.println("Worker Information:");
-        System.out.println("Name: " + getName());
-        System.out.println("Address: " + getAddress());
-        System.out.println("Phone: " + getPhone());
-        System.out.println("Age: " + getAge());
+        System.out.println("Name: " + super.getName());
+        System.out.println("Address: " + super.getAddress());
+        System.out.println("Phone: " + super.getPhone());
+        System.out.println("Age: " + super.getAge());
     }
 }
 
