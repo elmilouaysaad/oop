@@ -1,10 +1,16 @@
 
+import java.util.List;
+import java.util.Scanner;
+
 import realestate.*;
 import user.*;
 
 
 public class main {
-    
+    private List<Person> Preson;
+    private List<RealEstate> RealEstate;
+    private User currentUser;
+    private Scanner scanner;
 
         public static void main(String[] args) {
             Owner owner = new Owner("John Doe", "123 Main St", "555-1234", 35);
