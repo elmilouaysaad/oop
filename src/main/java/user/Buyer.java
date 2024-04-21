@@ -29,8 +29,12 @@ public class Buyer extends Person {
 
     @Override
     public void displayInformation() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        // Displaying information about the worker
+        System.out.println("Worker Information:");
+        System.out.println("Name: " + getName());
+        System.out.println("Address: " + getAddress());
+        System.out.println("Phone: " + getPhone());
+        System.out.println("Age: " + getAge());
     }
-
 }
 

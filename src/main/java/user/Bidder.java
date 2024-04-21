@@ -1,53 +1,42 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package user;
+import exception.*;
+public class Bidder extends Person {
+    private double bid;
 
-/**
- *
- * @author mello
- */
-public class Bidder {
-    private String name;
-    private int age;
-
- 
-   public Bidder(String name, int age) {
-        this.name = name;
+    public Bidder(String name, String address, String phone, int age, double bid) {
+        super(name, address, phone, age);
         try {
             if (age < 18) {
-                throw new IllegalArgumentException("Bidder must be over 18 to participate in auctions.");
+                throw new UnderAgeException("Bidder must be over 18 to participate in auctions.");
             }
-            this.age = age;
-        } catch (IllegalArgumentException e) {
+            this.bid = bid;
+        } catch (UnderAgeException e) {
             System.err.println(e.getMessage());
-            this.age = -1;
+            this.bid = -1; // Default bid value when age requirement is not met
         }
     }
 
-public void placeBid(double amount) {
-        if (age >= 18) {
-            System.out.println(name + " placed a bid of $" + amount);
-            // Additional logic for placing bid
+    public void placeBid(double amount) {
+        if (getAge() >= 18) {
+            System.out.println(getName() + " placed a bid of $" + amount);
+            this.bid = amount; // Update bid amount
         } else {
-            System.out.println(name + " is not qualified to participate in the auction.");
+            System.out.println(getName() + " is not qualified to participate in the auction.");
         }
     }
-    public String getName() {
-        return name;
+
+    public double getBid() {
+        return bid;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    @Override
+    public void displayInformation() {
+        // Displaying information about the bidder
+        System.out.println("Bidder Information:");
+        System.out.println("Name: " + getName());
+        System.out.println("Address: " + getAddress());
+        System.out.println("Phone: " + getPhone());
+        System.out.println("Age: " + getAge());
+        System.out.println("Bid: $" + getBid());
     }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
 }

@@ -4,7 +4,6 @@
  */
 package user;
 
-import realestate.RealEstate;
 
 /**
  *
