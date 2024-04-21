@@ -1,26 +1,22 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package realestate;
-import user.Owner;
 
-/**
- *
- * @author mello
- */
-public abstract class Rental {
+import user.Owner;
+import enume.Type;
+
+public class Rental {
     protected RealEstate realEstate;
     protected Owner owner;
     protected int durationInMonths;
     protected double price;
+    protected Type type;
 
     // Constructor
-    public Rental(RealEstate realEstate, Owner owner, int durationInMonths, double price) {
+    public Rental(RealEstate realEstate, Owner owner, int durationInMonths, double price, Type type) {
         this.realEstate = realEstate;
         this.owner = owner;
         this.durationInMonths = durationInMonths;
         this.price = price;
+        this.type = type;
     }
 
     // Getters and setters
@@ -56,7 +52,18 @@ public abstract class Rental {
         this.price = price;
     }
 
-    // Abstract method to calculate rental cost
-    public abstract double calculateRentalCost();
-}
+    public Type getType() {
+        return type;
+    }
 
+    public void setType(Type type) {
+        this.type = type;
+    }
+
+    // Abstract method to calculate rental cost
+    public  double calculateRentalCost(){
+        double totalCost = getPrice() * getDurationInMonths();
+        double discount = totalCost  * getDurationInMonths();
+        return totalCost - discount;
+    }
+}
