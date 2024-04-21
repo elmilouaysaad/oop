@@ -19,13 +19,6 @@ public class Buyer extends Person {
 
  
 
-    public void verifyAge() throws UnderAgeException {
-        // Verify if the buyer is over 18
-        if (super.getAge() < 18) {
-            throw new UnderAgeException("Buyer is under 18 years old.");
-        }
-    }
-
     @Override
     public void displayInformation() {
         // Displaying information about the worker

@@ -3,39 +3,31 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package user;
-
+import realestate.*;
+import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author mello
  */
-public class Owner {
-    private String name;
-    private String contactInfo;
+public class Owner extends Person {
+    private List<RealEstate> ownedRealEstates;
 
-    // Constructor
-    public Owner(String name, String contactInfo) {
-        this.name = name;
-        this.contactInfo = contactInfo;
+    public Owner(String name, String address, String phone, int age) {
+        super(name, address, phone, age);
+        this.ownedRealEstates = new ArrayList<>();
+    }
+    public void removeOwnedRealEstate(RealEstate realEstate) {
+        ownedRealEstates.remove(realEstate);
     }
 
-    // Getter methods
-    public String getName() {
-        return name;
+    public List<RealEstate> getOwnedRealEstates() {
+        return ownedRealEstates;
     }
-
-    public String getContactInfo() {
-        return contactInfo;
+    @Override
+    public void displayInformation() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'displayInformation'");
     }
-
-    // Setter methods
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setContactInfo(String contactInfo) {
-        this.contactInfo = contactInfo;
-    }
-
-    // Other methods as needed
 }
 
