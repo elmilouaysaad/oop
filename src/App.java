@@ -87,14 +87,13 @@ public class App {
       switch (choice) {
         case 1 -> {
           System.out.println("\n=== Agency ===");
-          VillaCollection.printAllVillas();
           System.out.println("1. Rent ");
           System.out.println("2. Bid ");
           System.out.println("3. Buy ");
           switch (choice){
             case 1  -> {
-              String filePath = "example_villas.txt";
-              VillaCollection villaCollection = new VillaCollection();
+  
+        
 
 
             }

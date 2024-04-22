@@ -1,31 +1,33 @@
 package realestate;
 
 import user.*;
+import enume.*;
 import java.util.ArrayList;
 import java.util.List;
 import other.Interaction;
 
-public abstract class RealEstate {
+public class RealEstate {
     private String address;
     private Owner owner;
-    protected Manager manager;
-
+    private Manager manager;
+    private Type type;
     private Housekeeper housekeeper;
-    private boolean ForSale;
-    private boolean ForRent;
-    private boolean ShorTerm;
-    private boolean LongTerm;
+    private boolean forSale; 
+    private boolean forRent; 
+    private boolean shortTerm; 
+    private boolean longTerm; 
     private List<Interaction> interactionLog;
 
     // Constructor
-    public RealEstate(String address, Owner owner, Manager manager, boolean ForSale, boolean ForRent, boolean ShortTerm, boolean LongTerm) {
+    public RealEstate(String address, Owner owner, Manager manager, Type type, boolean forSale, boolean forRent, boolean shortTerm, boolean longTerm) {
         this.address = address;
         this.owner = owner;
         this.manager = manager;
-        this.ForSale = ForSale;
-        this.ForRent = ForRent;
-        this.ShorTerm = ShortTerm;
-        this.LongTerm = LongTerm;
+        this.type = type;
+        this.forSale = forSale;
+        this.forRent = forRent;
+        this.shortTerm = shortTerm;
+        this.longTerm = longTerm;
         this.interactionLog = new ArrayList<>();
     }
    
@@ -36,9 +38,6 @@ public abstract class RealEstate {
     public void setHousekeeper(Housekeeper housekeeper) {
         this.housekeeper = housekeeper;
     }
-
-    // Abstract method to calculate price
-    public abstract double calculatePrice();
 
     // Getters and setters
     public String getAddress() {
@@ -65,38 +64,44 @@ public abstract class RealEstate {
         this.manager = manager;
     }
 
-    public boolean ForSale() {
-        return ForSale;
+    public boolean isForSale() { 
+        return forSale;
     }
 
     public void setForSale(boolean forSale) {
-        ForSale = forSale;
+        this.forSale = forSale;
     }
 
-    public boolean ForRent() {
-        return ForRent;
+    public boolean isForRent() { 
+        return forRent;
     }
 
     public void setForRent(boolean forRent) {
-        ForRent = forRent;
+        this.forRent = forRent;
     }
 
-    public boolean ShorTerm() {
-        return ShorTerm;
+    public boolean isShortTerm() { 
+        return shortTerm;
     }
 
     public void setShortTerm(boolean shortTerm) {
-        ShorTerm = shortTerm;
+        this.shortTerm = shortTerm;
     }
 
-    public boolean LongTerm() {
-        return LongTerm;
+    public boolean isLongTerm() { 
+        return longTerm;
     }
 
     public void setLongTerm(boolean longTerm) {
-        LongTerm = longTerm;
+        this.longTerm = longTerm;
     }
-
+    public void setType(Type type) {
+        this.type = type;
+    }
+    public Type getType() {
+        return type;
+    }    
+    
     public void addInteraction(Interaction interaction) {
         interactionLog.add(interaction);
     }

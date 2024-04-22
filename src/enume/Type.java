@@ -1,6 +1,5 @@
 package enume;
 
 public enum Type  {
-    SHORT_TERM,
-    LONG_TERM
+   Villa, Commercial, Apartment, Studio;
 }

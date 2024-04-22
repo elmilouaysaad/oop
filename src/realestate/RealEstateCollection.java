@@ -1,7 +1,6 @@
 package realestate;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -46,9 +45,7 @@ public class RealEstateCollection {
         return result;
     }
 
-    public void sortByPrice() {
-        realEstates.sort(Comparator.comparingDouble(RealEstate::calculatePrice));
-    }
+   
     public void saveToFile() {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("data/dressup.ser"))) {
             oos.writeObject(realEstates);
