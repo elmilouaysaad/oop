@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import realestate.*;
 import user.*;
-
+import other.*;
 
 public class App {
     private List<Person> Preson;
@@ -40,19 +40,86 @@ public class App {
     }
     System.out.println("Invalid username or password. Please try again.");
   }
-        public static void main(String[] args) {
-            
-            Owner owner = new Owner("John Doe", "123 Main St", "555-1234", 35);
+  public void mainmenu(){while (true) {
+    if (currentUser == null) {
+      System.out.println("\n=== Agency ===");
+      System.out.println("1. Register");
+      System.out.println("2. Login");
+      System.out.println("3. Exit");
+      System.out.print("Enter your choice: ");
 
-            // Creating a villa owned by the owner
-            Villa villa = new Villa("456 Park Ave", owner, true, false, false, false, 4, 1000.0);
-    
-            // Displaying information about the owner and the villa
-            //owner.displayInformation();
-            System.out.println("Number of rooms in the villa: " + villa.getNumberOfRooms());
-            System.out.println("Land area of the villa: " + villa.getLandArea());
-    
-            // Calculating and displaying the price of the villa
-            System.out.println("Price of the villa: $" + villa.calculatePrice());
+      int choice = scanner.nextInt();
+      scanner.nextLine(); 
+      switch (choice) {
+        case 1:
+          System.out.print("Enter username: ");
+          String regUsername = scanner.nextLine();
+          System.out.print("Enter password: ");
+          String regPassword = scanner.nextLine();
+          register(regUsername, regPassword);
+          break;
+        case 2:
+          System.out.print("Enter username: ");
+          String loginUsername = scanner.nextLine();
+          System.out.print("Enter password: ");
+          String loginPassword = scanner.nextLine();
+          login(loginUsername, loginPassword);
+          break;
+        case 3:
+          System.out.println("Exiting.");
+          scanner.close();
+          System.exit(0);
+        default:
+          System.out.println("Invalid choice. Please enter a number between 1 and 3.");
+      }
+    } else {
+      System.out.println("\n=== Agency ===");
+      System.out.println("1. Browse For Rent");
+      System.out.println("2. Browse For Purchase");
+      System.out.println("3. Browse For Bidding");
+      System.out.println("4. List a Proprety ");
+      System.out.println("5. Logout");
+      System.out.print("Enter your choice: ");
+
+      int choice = scanner.nextInt();
+      scanner.nextLine(); // Consume the newline character
+
+      switch (choice) {
+        case 1 -> {
+          System.out.println("\n=== Agency ===");
+          VillaCollection.printAllVillas();
+          System.out.println("1. Rent ");
+          System.out.println("2. Bid ");
+          System.out.println("3. Buy ");
+          switch (choice){
+            case 1  -> {
+              String filePath = "example_villas.txt";
+              VillaCollection villaCollection = new VillaCollection();
+
+
+            }
+
+
+          }
+
+
+        }
+        case 2 -> {
+            
+            }
+       
+        case 3 -> {
+            currentUser = null;
+            System.out.println("Logged out successfully.");
+            }
+        default -> System.out.println("Invalid choice. Please enter a number between 1 and 4.");
+      }
+    }
+  }
+}
+        public static void main(String[] args) {
+          App app = new App();
+          app.mainmenu();
+            
         }
         }

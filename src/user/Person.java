@@ -8,48 +8,48 @@ package user;
  *
  * @author mello
  */
-public abstract  class Person {
+
+public abstract class Person extends User {
     private String name;
     private String address;
     private String phone;
     private int age;
 
     // Constructor
-    public Person(String name, String address, String phone,int age) {
+    public Person(String name, String address, String phone, int age, String username, String password) {
+        super(username, password); // Call the constructor of the superclass (User)
         this.name = name;
         this.address = address;
         this.phone = phone;
         this.age = age;
     }
+  
 
-    
-    // Getters
+    // Getters and setters for additional attributes specific to Person
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getAddress() {
         return address;
     }
 
-    public String getPhone() {
-        return phone;
-    }
-
-    // Setters
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getPhone() {
+        return phone;
     }
 
     public void setPhone(String phone) {
         this.phone = phone;
     }
 
-  
     public int getAge() {
         return age;
     }
@@ -57,5 +57,7 @@ public abstract  class Person {
     public void setAge(int age) {
         this.age = age;
     }
+
+    // Abstract method to display information
     public abstract void displayInformation();
 }

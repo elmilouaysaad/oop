@@ -13,8 +13,8 @@ public class Housekeeper extends Person {
     private Manager assignedManager;
 
     // Constructor
-    public Housekeeper(String name, String address, String phone, int age, Manager assignedManager) {
-        super(name, address, phone, age);
+    public Housekeeper(String name, String address, String phone, int age, String username, String password, Manager assignedManager) {
+        super(name, address, phone, age, username, password);
         this.assignedManager = assignedManager;
     }
 

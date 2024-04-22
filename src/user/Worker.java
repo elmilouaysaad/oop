@@ -4,8 +4,8 @@ import realestate.*;
 public class Worker extends Renter {
     private String profession;
 
-    public Worker(String name, String address, String phone, int age, String profession) {
-        super(name, address, phone, age);
+    public Worker(String name, String address, String phone, int age, String username, String password, String profession) {
+        super(name, address, phone, age, username, password);
         this.profession = profession;
     }
 

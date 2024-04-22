@@ -3,23 +3,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package realestate;
-import user.Owner;
+import user.*;
+import enume.*;
 
 /**
  *
  * @author mello
  */
-public class Villa extends RealEstate {
+public class Villa extends RealEstate  {
     private int numberOfRooms;
     private double landArea;
 
     // Constructor
-    public Villa(String address, Owner owner, boolean isForSale, boolean isForRent, boolean isShortTermRental, boolean isLongTermRental, int numberOfRooms, double landArea) {
-        super(address, owner, isForSale, isForRent, isShortTermRental, isLongTermRental);
+    public Villa(String address, Owner owner, Manager manager, boolean ForSale, boolean ForRent, boolean ShortTerm, boolean LongTerm, int numberOfRooms, double landArea) {
+        super(address, owner, manager, ForSale, ForRent, ShortTerm, LongTerm);
         this.numberOfRooms = numberOfRooms;
         this.landArea = landArea;
     }
-
+  
 
     @Override
     public double calculatePrice() {
@@ -28,6 +29,7 @@ public class Villa extends RealEstate {
         return basePricePerSquareMeter * landArea;
     }
 
+    
 
     public int getNumberOfRooms() {
         return numberOfRooms;

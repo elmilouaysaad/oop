@@ -12,8 +12,8 @@ import realestate.*;
 public class Student extends Renter {
     private String universityName;
 
-    public Student(String name, String address, String phone, int age, String universityName) {
-        super(name, address, phone, age);
+    public Student(String name, String address, String phone, int age, String username, String password, String universityName) {
+        super(name, address, phone, age, username, password);
         this.universityName = universityName;
     }
 

@@ -1,7 +1,7 @@
 
 
 package realestate;
-import user.Owner;
+import user.*;
 
 /**
  *
@@ -12,8 +12,8 @@ public class Commercial extends RealEstate {
     private double area;
 
     // Constructor
-    public Commercial(String address, Owner owner, boolean isForSale, boolean isForRent, boolean ShortTerm, boolean LongTerm, int numberOfFloors, double area) {
-        super(address, owner, isForSale, isForRent, ShortTerm, LongTerm);
+    public Commercial(String address, Owner owner, Manager manager, boolean ForSale, boolean ForRent, boolean ShortTerm, boolean LongTerm, int numberOfFloors, double area) {
+        super(address, owner, manager, ForSale, ForRent, ShortTerm, LongTerm);
         this.numberOfFloors = numberOfFloors;
         this.area = area;
     }

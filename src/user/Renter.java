@@ -11,8 +11,8 @@ import realestate.RealEstate;
  * @author mello
  */
 public abstract class Renter extends Person{
-    public Renter (String name, String address, String phone,int age){
-     super( name,  address,  phone, age);
+    public Renter (String name, String address, String phone,int age, String username, String password){
+     super( name,  address,  phone, age, username, password);
     }
     public abstract void rentProperty(RealEstate realEstate);
 }

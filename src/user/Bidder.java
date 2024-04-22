@@ -3,8 +3,8 @@ package user;
 public class Bidder extends Person {
     private double bid;
 
-    public Bidder(String name, String address, String phone, int age, double bid) {
-        super(name, address, phone, age);
+    public Bidder(String name, String address, String phone, int age, String username, String password, double bid) {
+        super(name, address, phone, age, username, password);
             this.bid = bid;
       
     }

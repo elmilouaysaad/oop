@@ -4,7 +4,7 @@
  */
 package user;
 import java.util.ArrayList;
-
+import realestate.*;
 import exception.*;
 
 /**
@@ -16,8 +16,8 @@ import exception.*;
 public class Seller extends Owner {
   
     RealEstate property;
-    public Seller(String name, String address, String phone,int age,RealEstate property) {
-    super(name, address, phone, age);
+    public Seller(String name, String address, String phone,int age, String username, String password, RealEstate property) {
+    super(name, address, phone, age, username, password);
     this.property=property;
     }
 

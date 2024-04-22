@@ -1,31 +1,40 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package realestate;
-import user.Owner;
 
-/**
- *
- * @author mello
- */
+import user.*;
+import java.util.ArrayList;
+import java.util.List;
+import other.Interaction;
 
-    public abstract class RealEstate {
+public abstract class RealEstate {
     private String address;
     private Owner owner;
-    private boolean isForSale;
-    private boolean isForRent;
-    private boolean Shortterm;
+    protected Manager manager;
+
+    private Housekeeper housekeeper;
+    private boolean ForSale;
+    private boolean ForRent;
+    private boolean ShorTerm;
     private boolean LongTerm;
+    private List<Interaction> interactionLog;
 
     // Constructor
-    public RealEstate(String address, Owner owner, boolean isForSale, boolean isForRent, boolean isShortTermRental, boolean isLongTermRental) {
+    public RealEstate(String address, Owner owner, Manager manager, boolean ForSale, boolean ForRent, boolean ShortTerm, boolean LongTerm) {
         this.address = address;
         this.owner = owner;
-        this.isForSale = isForSale;
-        this.isForRent = isForRent;
-        this.Shortterm = isShortTermRental;
-        this.LongTerm = isLongTermRental;
+        this.manager = manager;
+        this.ForSale = ForSale;
+        this.ForRent = ForRent;
+        this.ShorTerm = ShortTerm;
+        this.LongTerm = LongTerm;
+        this.interactionLog = new ArrayList<>();
+    }
+   
+    public Housekeeper getHousekeeper() {
+        return housekeeper;
+    }
+
+    public void setHousekeeper(Housekeeper housekeeper) {
+        this.housekeeper = housekeeper;
     }
 
     // Abstract method to calculate price
@@ -48,36 +57,51 @@ import user.Owner;
         this.owner = owner;
     }
 
-    public boolean isForSale() {
-        return isForSale;
+    public Manager getManager() {
+        return manager;
+    }
+
+    public void setManager(Manager manager) {
+        this.manager = manager;
+    }
+
+    public boolean ForSale() {
+        return ForSale;
     }
 
     public void setForSale(boolean forSale) {
-        isForSale = forSale;
+        ForSale = forSale;
     }
 
-    public boolean isForRent() {
-        return isForRent;
+    public boolean ForRent() {
+        return ForRent;
     }
 
     public void setForRent(boolean forRent) {
-        isForRent = forRent;
+        ForRent = forRent;
     }
 
-    public boolean isShortTermRental() {
-        return Shortterm;
+    public boolean ShorTerm() {
+        return ShorTerm;
     }
 
-    public void setShortTermRental(boolean shortTermRental) {
-        Shortterm = shortTermRental;
+    public void setShortTerm(boolean shortTerm) {
+        ShorTerm = shortTerm;
     }
 
-    public boolean isLongTermRental() {
+    public boolean LongTerm() {
         return LongTerm;
     }
 
-    public void setLongTermRental(boolean longTermRental) {
-        LongTerm = longTermRental;
+    public void setLongTerm(boolean longTerm) {
+        LongTerm = longTerm;
+    }
+
+    public void addInteraction(Interaction interaction) {
+        interactionLog.add(interaction);
+    }
+
+    public List<Interaction> getInteractionLog() {
+        return interactionLog;
     }
 }
-

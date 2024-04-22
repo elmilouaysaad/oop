@@ -13,10 +13,11 @@ import java.util.List;
 public class Owner extends Person {
     private List<RealEstate> ownedRealEstates;
 
-    public Owner(String name, String address, String phone, int age) {
-        super(name, address, phone, age);
+    public Owner(String name, String address, String phone, int age, String username, String password) {
+        super(name, address, phone, age, username, password);
         this.ownedRealEstates = new ArrayList<>();
     }
+    
     public void removeOwnedRealEstate(RealEstate realEstate) {
         ownedRealEstates.remove(realEstate);
     }

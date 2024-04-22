@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package realestate;
-import user.Owner;
+import user.*;
 
 /**
  *
@@ -14,8 +14,8 @@ public class Building extends RealEstate {
     private int numberOfStudios;
 
     // Constructor
-    public Building(String address, Owner owner, boolean isForSale, boolean isForRent, boolean isShortTermRental, boolean isLongTermRental, int numberOfApartments, int numberOfStudios) {
-        super(address, owner, isForSale, isForRent, isShortTermRental, isLongTermRental);
+    public Building(String address, Owner owner, Manager manager, boolean ForSale, boolean ForRent, boolean ShortTerm, boolean LongTerm, int numberOfApartments, int numberOfStudios) {
+        super(address, owner, manager, ForSale, ForRent, ShortTerm, LongTerm);
         this.numberOfApartments = numberOfApartments;
         this.numberOfStudios = numberOfStudios;
     }
