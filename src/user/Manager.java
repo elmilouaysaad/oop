@@ -13,8 +13,8 @@ public class Manager extends Person {
     private ArrayList<RealEstate> managedRealEstates;
 
     // Constructor
-    public Manager(String name, String address, String phone, int age, String username, String password) {
-        super(name, address, phone, age, username, password);
+    public Manager(String name, String address, String phone, int age) {
+        super(name, address, phone, age);
         this.managedRealEstates = new ArrayList<>();
     }
 

@@ -14,7 +14,7 @@ public class Owner extends Person {
     private List<RealEstate> ownedRealEstates;
 
     public Owner(String name, String address, String phone, int age, String username, String password) {
-        super(name, address, phone, age, username, password);
+        super(name, address, phone, age);
         this.ownedRealEstates = new ArrayList<>();
     }
     

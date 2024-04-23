@@ -9,15 +9,14 @@ package user;
  * @author mello
  */
 
-public abstract class Person extends User {
+public abstract class Person  {
     private String name;
     private String address;
     private String phone;
     private int age;
 
     // Constructor
-    public Person(String name, String address, String phone, int age, String username, String password) {
-        super(username, password); // Call the constructor of the superclass (User)
+    public Person(String name, String address, String phone, int age) {
         this.name = name;
         this.address = address;
         this.phone = phone;

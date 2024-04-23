@@ -12,7 +12,7 @@ import realestate.RealEstate;
  */
 public abstract class Renter extends Person{
     public Renter (String name, String address, String phone,int age, String username, String password){
-     super( name,  address,  phone, age, username, password);
+     super( name,  address,  phone, age);
     }
     public abstract void rentProperty(RealEstate realEstate);
 }

@@ -30,7 +30,16 @@ public class RealEstate {
         this.longTerm = longTerm;
         this.interactionLog = new ArrayList<>();
     }
-   
+    public RealEstate(String address, Manager manager, Type type, boolean forSale, boolean forRent, boolean shortTerm, boolean longTerm) {
+        this.address = address;
+        this.manager = manager;
+        this.type = type;
+        this.forSale = forSale;
+        this.forRent = forRent;
+        this.shortTerm = shortTerm;
+        this.longTerm = longTerm;
+        this.interactionLog = new ArrayList<>();
+    }
     public Housekeeper getHousekeeper() {
         return housekeeper;
     }
