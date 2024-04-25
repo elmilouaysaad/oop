@@ -47,8 +47,6 @@ public class RealEstate {
     public void setHousekeeper(Housekeeper housekeeper) {
         this.housekeeper = housekeeper;
     }
-
-    // Getters and setters
     public String getAddress() {
         return address;
     }

@@ -116,11 +116,31 @@ public class App {
                    
                     System.out.println("");    
                     //harcode a houskeeper to use the methode assignhousekeeper 
-              Housekeeper housekeeper = new Housekeeper("Zohra", "456 Ifrane St", "066123568", 25, manager);
-                     // Example of a managed Realestate
-               RealEstate realEstate = new RealEstate("567 Ifrane Street", manager, Type.Villa, false, true, false, true);
-               manager.addManagedRealEstate(realEstate);
-               manager.assignHousekeeper(realEstate, housekeeper);
+              Housekeeper housekeeper1 = new Housekeeper("Zhor", "456 Ifrane St", "066123568", 25, manager);
+              Housekeeper housekeeper2 = new Housekeeper("Fatna", "455 Ifrane St", "066123561", 28, manager);
+              Housekeeper housekeeper3 = new Housekeeper("Fatima", "442 Ifrane St", "066123548", 29, manager);
+              RealEstate realEstate = new RealEstate("567 Ifrane Street", manager, Type.Villa, false, true, false, true);
+              System.out.println(" Which Houskeeper do you want to assign to"+realEstate.getAddress());
+              System.out.println(housekeeper1.getName());
+              System.out.println(housekeeper2.getName());
+              System.out.println(housekeeper3.getName());
+              int a= scanner.nextInt();
+              switch (a) {
+                case 1:
+                manager.addManagedRealEstate(realEstate);
+                manager.assignHousekeeper(realEstate, housekeeper1);
+                  break;
+                case 2:
+                manager.addManagedRealEstate(realEstate);
+                manager.assignHousekeeper(realEstate, housekeeper2);
+                case 3:
+                manager.addManagedRealEstate(realEstate);
+                manager.assignHousekeeper(realEstate, housekeeper3);
+                default:
+                  break;
+              }
+
+               
                     break;
                 case 2:
                     exit = true;
