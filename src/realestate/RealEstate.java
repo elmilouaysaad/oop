@@ -40,6 +40,25 @@ public class RealEstate {
         this.longTerm = longTerm;
         this.interactionLog = new ArrayList<>();
     }
+    public RealEstate(String address, Owner ower, Type type, boolean forSale, boolean forRent, boolean shortTerm, boolean longTerm) {
+        this.address = address;
+        this.owner = owner;
+        this.type = type;
+        this.forSale = forSale;
+        this.forRent = forRent;
+        this.shortTerm = shortTerm;
+        this.longTerm = longTerm;
+        this.interactionLog = new ArrayList<>();
+    }
+    public RealEstate(String address, Type type, boolean forSale, boolean forRent, boolean shortTerm, boolean longTerm) {
+        this.address = address;
+        this.type = type;
+        this.forSale = forSale;
+        this.forRent = forRent;
+        this.shortTerm = shortTerm;
+        this.longTerm = longTerm;
+        this.interactionLog = new ArrayList<>();
+    }
     public Housekeeper getHousekeeper() {
         return housekeeper;
     }

@@ -13,11 +13,13 @@ import java.util.List;
 public class Owner extends Person {
     private List<RealEstate> ownedRealEstates;
 
-    public Owner(String name, String address, String phone, int age, String username, String password) {
+    public Owner(String name, String address, String phone, int age, ArrayList ownedRealEstattes) {
         super(name, address, phone, age);
         this.ownedRealEstates = new ArrayList<>();
     }
-    
+    public Owner(String name, String address, String phone, int age) {
+        super(name, address, phone, age);
+    }
     public void removeOwnedRealEstate(RealEstate realEstate) {
         ownedRealEstates.remove(realEstate);
     }
@@ -25,10 +27,24 @@ public class Owner extends Person {
     public List<RealEstate> getOwnedRealEstates() {
         return ownedRealEstates;
     }
+    
     @Override
-    public void displayInformation() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'displayInformation'");
+    public void displayInformation() {   System.out.println("Manager Information:");
+    System.out.println("Name: " + super.getName());
+    System.out.println("Address: " + super.getAddress());
+    System.out.println("Phone: " + super.getPhone());
+    System.out.println("Age: " + super.getAge());
+    System.out.println("Owned Real Estates:");
+    for (RealEstate realEstate : ownedRealEstates) {
+        System.out.println("- " + realEstate);
+    }
+    }
+    public void DisplayOwnedRealEstate(){
+        System.out.println("Owned Real Estates:");
+        for (RealEstate realEstate : ownedRealEstates) {
+            System.out.println("- " + realEstate);
+        }
+
     }
 }
 

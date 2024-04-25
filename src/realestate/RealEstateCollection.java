@@ -12,7 +12,7 @@ public class RealEstateCollection {
     private static List<RealEstate> realEstates;
 
     public RealEstateCollection() {
-        this.realEstates = new ArrayList<>();
+        RealEstateCollection.realEstates = new ArrayList<>();
     }
 
     public void add(RealEstate realEstate) {
@@ -32,6 +32,12 @@ public class RealEstateCollection {
             realEstates.remove(index);
         } else {
             System.out.println("Index out of bounds.");
+        }
+    }
+    public void displayRealEstates() {
+        System.out.println("Real Estates:");
+        for (RealEstate realEstate : realEstates) {
+            System.out.println(realEstate.toString());
         }
     }
 
