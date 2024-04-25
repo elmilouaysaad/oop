@@ -13,23 +13,24 @@ import java.util.List;
 public class Owner extends Person {
     private List<RealEstate> ownedRealEstates;
 
-    public Owner(String name, String address, String phone, int age, ArrayList ownedRealEstattes) {
+
+    public Owner(String name, String address, String phone, int age) {
         super(name, address, phone, age);
         this.ownedRealEstates = new ArrayList<>();
     }
-    public Owner(String name, String address, String phone, int age) {
-        super(name, address, phone, age);
-    }
     public void removeOwnedRealEstate(RealEstate realEstate) {
         ownedRealEstates.remove(realEstate);
+    }
+    public void addOwnedRealEstate(RealEstate realEstate) {
+        ownedRealEstates.add(realEstate);
     }
 
     public List<RealEstate> getOwnedRealEstates() {
         return ownedRealEstates;
     }
-    
+
     @Override
-    public void displayInformation() {   System.out.println("Manager Information:");
+    public void displayInformation() {   System.out.println("Owner Information:");
     System.out.println("Name: " + super.getName());
     System.out.println("Address: " + super.getAddress());
     System.out.println("Phone: " + super.getPhone());

@@ -61,6 +61,7 @@ public class RealEstateCollection {
         }
     }
 
+
     @SuppressWarnings("unchecked")
     public void loadFromFile() {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("data/dressup.ser"))) {

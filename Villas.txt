@@ -1,3 +1,0 @@
-123 Main St, Owner1, Manager1, true, true, true, false, 5, 200.0
-456 Elm St, Owner2, Manager2, true, false, false, true, 4, 150.0
-789 Oak St, Owner3, Manager3, true, true, true, false, 6, 250.0

@@ -135,4 +135,13 @@ public class RealEstate {
     public List<Interaction> getInteractionLog() {
         return interactionLog;
     }
+    @Override
+public String toString() {
+    return "RealEstate{" +
+            "address='" + address + '\'' +
+            ", type=" + type +
+            ", forSale=" + forSale +
+            ", forRent=" + forRent+ 
+            "}";
+}
 }

@@ -121,7 +121,7 @@ public class App {
             System.out.print("Enter your choice: ");
             int nm = scanner.nextInt();
             scanner.nextLine(); 
-
+          
             switch (nm) {
                 case 1:
                    
@@ -184,6 +184,7 @@ public class App {
               }
           }
           Owner owner = new Owner(name, address, phone, age);
+
           boolean exit = false;
           while (!exit) {
               System.out.println("\nChoose an option:");
@@ -204,8 +205,7 @@ public class App {
                       realEstates.add(new RealEstate("890 Marrakech Street", owner, Type.Studio, true, true, false, false));
                       realEstates.add(new RealEstate("456 Tangier Street", owner, Type.Villa, false, false, true, true));
                       realEstates.add(new RealEstate("234 Rabat Street", owner, Type.Villa, true, false, true, true));
-                  // owner.DisplayOwnedRealEstate();
-                  System.out.println(owner.getOwnedRealEstates());
+                  owner.DisplayOwnedRealEstate();
                       break;                
                   case 2:
                       exit = true;
