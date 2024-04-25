@@ -229,6 +229,17 @@ public class App {
             System.out.println("1. Buy Now.");
             System.out.println("2. Enter an Auction.");
             System.out.println("3. Rent.");
+            int ok = scanner.nextInt();
+            scanner.nextLine(); 
+            switch (ok) {
+              case 2:
+                
+                break;
+            
+              default:
+                break;
+            }
+
 
             }
        
