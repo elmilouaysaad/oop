@@ -121,7 +121,7 @@ public class App {
             System.out.print("Enter your choice: ");
             int nm = scanner.nextInt();
             scanner.nextLine(); 
-
+          
             switch (nm) {
                 case 1:
                    
@@ -184,6 +184,7 @@ public class App {
               }
           }
           Owner owner = new Owner(name, address, phone, age);
+
           boolean exit = false;
           while (!exit) {
               System.out.println("\nChoose an option:");
@@ -196,15 +197,13 @@ public class App {
               switch (nm) {
                   case 1:
                      
-                      System.out.println("");    
-                      // realestat owned to use for methods of manager
-                      List<RealEstate> realEstates = new ArrayList<>();
-                      realEstates.add(new RealEstate("567 Ifrane Street", owner, Type.Villa, false, true, false, true));
-                      realEstates.add(new RealEstate("123 Casablanca Street", owner, Type.Apartment, true, false, true, false));
-                      realEstates.add(new RealEstate("890 Marrakech Street", owner, Type.Studio, true, true, false, false));
-                      realEstates.add(new RealEstate("456 Tangier Street", owner, Type.Villa, false, false, true, true));
-                      realEstates.add(new RealEstate("234 Rabat Street", owner, Type.Villa, true, false, true, true));
-                  owner.DisplayOwnedRealEstate();
+                  RealEstateCollection realEstateCollection = new RealEstateCollection();
+                  realEstateCollection.add(new RealEstate("567 Ifrane Street",  Type.Villa, false, true, false, true));
+                  realEstateCollection.add(new RealEstate("123 Casablanca Street",  Type.Apartment, true, false, true, false));
+                  realEstateCollection.add(new RealEstate("890 Marrakech Street",  Type.Studio, true, true, false, false));
+                  realEstateCollection.add(new RealEstate("456 Tangier Street",  Type.Studio, false, false, true, true));
+                  realEstateCollection.add(new RealEstate("234 Rabat Street",  Type.Apartment, true, false, true, true));
+                  realEstateCollection.displayRealEstates();
                       break;                
                   case 2:
                       exit = true;
