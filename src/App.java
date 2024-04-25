@@ -246,7 +246,7 @@ public class App {
               int age = 0;
               boolean validAge = false; 
               
-              while (!validAge) {
+              while (!validAge || age<18) {
                   try {
                       System.out.print("Age: ");
                       age = Integer.parseInt(scanner.nextLine());
@@ -286,12 +286,14 @@ public class App {
         case 4 -> {
             currentUser = null;
             System.out.println("Logged out successfully.");
+            break;
             }
         default -> System.out.println("Invalid choice. Please enter a number between 1 and 4.");
       }
-      
+      if(choice != 4){
       AgencyGUI.setChoice(0);
       choice =0;
+      }
     }
   }
 }
