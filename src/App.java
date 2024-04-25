@@ -204,7 +204,8 @@ public class App {
                       realEstates.add(new RealEstate("890 Marrakech Street", owner, Type.Studio, true, true, false, false));
                       realEstates.add(new RealEstate("456 Tangier Street", owner, Type.Villa, false, false, true, true));
                       realEstates.add(new RealEstate("234 Rabat Street", owner, Type.Villa, true, false, true, true));
-                  owner.DisplayOwnedRealEstate();
+                  // owner.DisplayOwnedRealEstate();
+                  System.out.println(owner.getOwnedRealEstates());
                       break;                
                   case 2:
                       exit = true;
