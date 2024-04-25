@@ -42,6 +42,7 @@ public class App {
     System.out.println("Invalid username or password. Please try again.");
   }
   public void mainmenu(){while (true) {
+  
     if (currentUser == null) {
       System.out.println("\n=== Agency ===");
       System.out.println("1. Register");
@@ -95,10 +96,18 @@ public class App {
         String address = scanner.nextLine();
         System.out.print("Phone: ");
         String phone = scanner.nextLine();
-        System.out.print("Age: ");
-        int age = scanner.nextInt();
-        scanner.nextLine(); 
-    
+        int age = 0;
+        boolean validAge = false; // to catch any non int input
+        
+        while (!validAge) {
+            try {
+                System.out.print("Age: ");
+                age = Integer.parseInt(scanner.nextLine());
+                validAge = true;
+            } catch (NumberFormatException e) {
+                System.out.println("Please enter a valid integer for age.");
+            }
+        }
 
         // Create Manager object
         Manager manager = new Manager(name, address, phone, age);
@@ -109,7 +118,7 @@ public class App {
             System.out.println("2. Go back");
             System.out.print("Enter your choice: ");
             int nm = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine(); 
 
             switch (nm) {
                 case 1:
@@ -120,7 +129,7 @@ public class App {
               Housekeeper housekeeper2 = new Housekeeper("Fatna", "455 Ifrane St", "066123561", 28, manager);
               Housekeeper housekeeper3 = new Housekeeper("Fatima", "442 Ifrane St", "066123548", 29, manager);
               RealEstate realEstate = new RealEstate("567 Ifrane Street", manager, Type.Villa, false, true, false, true);
-              System.out.println(" Which Houskeeper do you want to assign to"+realEstate.getAddress());
+              System.out.println(" Which Houskeeper do you want to assign to. " + realEstate.getType()+ "on" +realEstate.getAddress());
               System.out.println(housekeeper1.getName());
               System.out.println(housekeeper2.getName());
               System.out.println(housekeeper3.getName());
@@ -153,10 +162,74 @@ public class App {
         }
       }
         case 2 -> {
-            
+          System.out.println("Enter your information:");
+          System.out.print("Name: ");
+          String name = scanner.nextLine();
+          System.out.print("Address: ");
+          String address = scanner.nextLine();
+          System.out.print("Phone: ");
+          String phone = scanner.nextLine();
+          int age = 0;
+          boolean validAge = false; 
+          
+          while (!validAge) {
+              try {
+                  System.out.print("Age: ");
+                  age = Integer.parseInt(scanner.nextLine());
+                  validAge = true;
+              } catch (NumberFormatException e) {
+                  System.out.println("Please enter a valid integer for age.");
+              }
+          }
+          Owner owner = new Owner(name, address, phone, age);
+          boolean exit = false;
+          while (!exit) {
+              System.out.println("\nChoose an option:");
+              System.out.println("1. View owned Propreties.");     
+              System.out.println("2. Go back");
+              System.out.print("Enter your choice: ");
+              int nm = scanner.nextInt();
+              scanner.nextLine(); // Consume newline
+  
+              switch (nm) {
+                  case 1:
+                     
+                      System.out.println("");    
+                      // realestat owned to use for methods of manager
+                      List<RealEstate> realEstates = new ArrayList<>();
+                      realEstates.add(new RealEstate("567 Ifrane Street", owner, Type.Villa, false, true, false, true));
+                      realEstates.add(new RealEstate("123 Casablanca Street", owner, Type.Apartment, true, false, true, false));
+                      realEstates.add(new RealEstate("890 Marrakech Street", owner, Type.Studio, true, true, false, false));
+                      realEstates.add(new RealEstate("456 Tangier Street", owner, Type.Villa, false, false, true, true));
+                      realEstates.add(new RealEstate("234 Rabat Street", owner, Type.Villa, true, false, true, true));
+                  owner.DisplayOwnedRealEstate();
+                      break;                
+                  case 2:
+                      exit = true;
+                      System.out.println("Going back...");
+                      break;
+                  default:
+                      System.out.println("Invalid choice. Please enter 1 or 2.");
+                      break;
+              }
+          }
+  
             }
-        case 3 -> {
-            
+        case 3 -> { 
+          System.out.println("Here are the availabe RealEstates :");
+          RealEstateCollection realEstateCollection = new RealEstateCollection();
+
+        // example real estate instances
+        realEstateCollection.add(new RealEstate("567 Ifrane Street",  Type.Villa, false, true, false, true));
+        realEstateCollection.add(new RealEstate("123 Casablanca Street",  Type.Apartment, true, false, true, false));
+        realEstateCollection.add(new RealEstate("890 Marrakech Street",  Type.Studio, true, true, false, false));
+        realEstateCollection.add(new RealEstate("456 Tangier Street",  Type.Studio, false, false, true, true));
+        realEstateCollection.add(new RealEstate("234 Rabat Street",  Type.Apartment, true, false, true, true));
+            realEstateCollection.displayRealEstates();
+            System.out.println("1. Buy Now.");
+            System.out.println("2. Enter an Auction.");
+            System.out.println("3. Rent.");
+
             }
        
         case 4 -> {
