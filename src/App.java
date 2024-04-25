@@ -29,6 +29,10 @@ public class App {
     Users.add(newUser);
     System.out.println("Registration successful!");
   }
+  public void register(User user) {
+    Users.add(user);
+    System.out.println("Registration successful!");
+  }
 
   // Login
   public void login(String username, String password) {
@@ -53,17 +57,20 @@ public class App {
       scanner.nextLine(); 
       switch (choice) {
         case 1:
-          System.out.print("Enter username: ");
-          String regUsername = scanner.nextLine();
-          System.out.print("Enter password: ");
-          String regPassword = scanner.nextLine();
-          register(regUsername, regPassword);
+          new SignUpGUI();
+          while (SignUpGUI.getUser() == null) {
+              System.out.print("");
+          }
+          User newUser=SignUpGUI.getUser();
+          register(newUser);
           break;
         case 2:
-          System.out.print("Enter username: ");
-          String loginUsername = scanner.nextLine();
-          System.out.print("Enter password: ");
-          String loginPassword = scanner.nextLine();
+          new LoginGUI();
+          while (LoginGUI.getUsername() == null) {
+            System.out.print("");
+        }
+          String loginUsername =LoginGUI.getUsername();
+          String loginPassword = LoginGUI.getPassword();
           login(loginUsername, loginPassword);
           break;
         case 3:
@@ -74,16 +81,11 @@ public class App {
           System.out.println("Invalid choice. Please enter a number between 1 and 3.");
       }
     } else {
-      System.out.println("\n=== Agency ===");
-      System.out.println("\n===    ===");
-      System.out.println("1. i am a manager");
-      System.out.println("2. i am an owner");
-      System.out.println("3. i am looking to buy a proprety");
-      System.out.println("4. Logout");
-      System.out.print("Enter your choice: ");
-
-      int choice = scanner.nextInt();
-      scanner.nextLine(); // Consume the newline character
+      new AgencyGUI();
+      while (AgencyGUI.getChoice()==0) {
+        System.out.print("");
+      }
+      int choice =AgencyGUI.getChoice();
 
       switch (choice) {
         case 1 -> {
@@ -116,11 +118,31 @@ public class App {
                    
                     System.out.println("");    
                     //harcode a houskeeper to use the methode assignhousekeeper 
-              Housekeeper housekeeper = new Housekeeper("Zohra", "456 Ifrane St", "066123568", 25, manager);
-                     // Example of a managed Realestate
-               RealEstate realEstate = new RealEstate("567 Ifrane Street", manager, Type.Villa, false, true, false, true);
-               manager.addManagedRealEstate(realEstate);
-               manager.assignHousekeeper(realEstate, housekeeper);
+              Housekeeper housekeeper1 = new Housekeeper("Zhor", "456 Ifrane St", "066123568", 25, manager);
+              Housekeeper housekeeper2 = new Housekeeper("Fatna", "455 Ifrane St", "066123561", 28, manager);
+              Housekeeper housekeeper3 = new Housekeeper("Fatima", "442 Ifrane St", "066123548", 29, manager);
+              RealEstate realEstate = new RealEstate("567 Ifrane Street", manager, Type.Villa, false, true, false, true);
+              System.out.println(" Which Houskeeper do you want to assign to"+realEstate.getAddress());
+              System.out.println(housekeeper1.getName());
+              System.out.println(housekeeper2.getName());
+              System.out.println(housekeeper3.getName());
+              int a= scanner.nextInt();
+              switch (a) {
+                case 1:
+                manager.addManagedRealEstate(realEstate);
+                manager.assignHousekeeper(realEstate, housekeeper1);
+                  break;
+                case 2:
+                manager.addManagedRealEstate(realEstate);
+                manager.assignHousekeeper(realEstate, housekeeper2);
+                case 3:
+                manager.addManagedRealEstate(realEstate);
+                manager.assignHousekeeper(realEstate, housekeeper3);
+                default:
+                  break;
+              }
+
+               
                     break;
                 case 2:
                     exit = true;

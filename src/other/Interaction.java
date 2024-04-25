@@ -62,7 +62,7 @@ public class Interaction {
 
     // Method to add a comment to the interaction
     public void addComment(String comment) {
-        // Expand the comments array to accommodate the new comment
+        // Expand the comments array to fit the new comment
         String[] newComments = new String[comments.length + 1];
         System.arraycopy(comments, 0, newComments, 0, comments.length);
         newComments[comments.length] = comment;
