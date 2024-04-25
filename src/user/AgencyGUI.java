@@ -55,4 +55,7 @@ public class AgencyGUI extends JFrame implements ActionListener {
     public static int getChoice(){
         return choice;
     }
+    public static void setChoice(int c){
+        choice=c;
+    }
 }

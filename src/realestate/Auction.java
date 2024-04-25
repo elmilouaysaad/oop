@@ -13,17 +13,17 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-class Auction extends Sale {
-    private List<Bid> bids;
-    private boolean isOpen;
+public class Auction extends Sale {
+    private static List<Bid> bids;
+    private static boolean isOpen;
 
     public Auction(Date date, double startingPrice) {
         super(date, startingPrice);
-        this.bids = new ArrayList<>();
-        this.isOpen = true;
+        bids = new ArrayList<>();
+        isOpen = true;
     }
 
-    public void placeBid(Bidder bidder, double amount) {
+    public static void placeBid(Bidder bidder, double amount) {
         if (isOpen) {
             Bid newBid = new Bid(bidder, amount);
             bids.add(newBid);
@@ -32,19 +32,20 @@ class Auction extends Sale {
         }
     }
 
-    public void closeAuction() {
+    public static void closeAuction() {
         isOpen = false;
         // Find the winning bid
         Bid winningBid = findWinningBid();
+
         if (winningBid != null) {
             // Record the winning bidder
-            setWinningBidder(winningBid.getBidder());
+            System.out.println("the winning bidder is "+ winningBid.getBidder().getName());
         } else {
             System.out.println("No winning bid found. Auction ended without a winner.");
         }
     }
 
-    private Bid findWinningBid() {
+    private static Bid findWinningBid() {
         if (bids.isEmpty()) {
             return null;
         }
@@ -63,8 +64,5 @@ class Auction extends Sale {
         return "Auction";
     }
 
-    private void setWinningBidder(Bidder bidder) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }
 

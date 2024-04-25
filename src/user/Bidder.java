@@ -1,27 +1,14 @@
 package user;
 
 public class Bidder extends Person {
-    private double bid;
-
-    public Bidder(String name, String address, String phone, int age, String username, String password, double bid) {
+    private String name;
+    public Bidder(String name, String address, String phone, int age) {
         super(name, address, phone, age);
-            this.bid = bid;
-      
+      this.name=name;
     }
-
-    public void placeBid(double amount) {
-        if (getAge() >= 18) {
-            System.out.println(getName() + " placed a bid of $" + amount);
-            this.bid = amount; // Update bid amount
-        } else {
-            System.out.println(getName() + " is not qualified to participate in the auction.");
-        }
+    public String getName() {
+        return name;
     }
-
-    public double getBid() {
-        return bid;
-    }
-
     @Override
     public void displayInformation() {
         // Displaying information about the bidder
@@ -30,6 +17,5 @@ public class Bidder extends Person {
         System.out.println("Address: " + getAddress());
         System.out.println("Phone: " + getPhone());
         System.out.println("Age: " + getAge());
-        System.out.println("Bid: $" + getBid());
     }
 }

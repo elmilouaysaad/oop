@@ -1,6 +1,5 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.sql.Date;
+import java.util.*;
 
 import enume.Type;
 import realestate.*;
@@ -45,7 +44,8 @@ public class App {
     }
     System.out.println("Invalid username or password. Please try again.");
   }
-  public void mainmenu(){while (true) {
+  public void mainmenu(){
+    while (true) {
   
     if (currentUser == null) {
       System.out.println("\n=== Agency ===");
@@ -236,7 +236,44 @@ public class App {
             scanner.nextLine(); 
             switch (ok) {
               case 2:
-                
+              System.out.println("Enter your information:");
+              System.out.print("Name: ");
+              String name = scanner.nextLine();
+              System.out.print("Address: ");
+              String address = scanner.nextLine();
+              System.out.print("Phone: ");
+              String phone = scanner.nextLine();
+              int age = 0;
+              boolean validAge = false; 
+              
+              while (!validAge) {
+                  try {
+                      System.out.print("Age: ");
+                      age = Integer.parseInt(scanner.nextLine());
+                      validAge = true;
+                  } catch (NumberFormatException e) {
+                      System.out.println("Please enter a valid integer for age.");
+                  }
+              }
+              Bidder bidder = new Bidder(name,address,phone,age);
+              Bidder bot1= new Bidder("bot1","1","0661511211",18);
+              Bidder bot2 = new Bidder("bot2","2","0661511222",19);
+              Bidder bot3 = new Bidder("bot3","3","0661511233",21);
+              Bidder bot4 = new Bidder("bot4","4","0661511244",22);
+              long currentTimeInMillis = System.currentTimeMillis();
+              Date date = new Date(currentTimeInMillis);
+                new Auction(date ,100);
+                System.out.println("the biding is starting at 100$.");
+                System.out.println("enter your bid : ");
+                int price = scanner.nextInt();
+                scanner.nextLine();
+                Auction.placeBid(bidder,price);
+                Auction.placeBid(bot1,101);
+                Auction.placeBid(bot2,121);
+                Auction.placeBid(bot3,131);
+                Random rand=new Random();
+                Auction.placeBid(bot1,rand.nextInt(110,150));
+                Auction.closeAuction();
                 break;
             
               default:
@@ -252,6 +289,9 @@ public class App {
             }
         default -> System.out.println("Invalid choice. Please enter a number between 1 and 4.");
       }
+      
+      AgencyGUI.setChoice(0);
+      choice =0;
     }
   }
 }
