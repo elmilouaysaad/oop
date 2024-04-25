@@ -116,7 +116,7 @@ public class App {
                    
                     System.out.println("");    
                     //harcode a houskeeper to use the methode assignhousekeeper 
-              Housekeeper housekeeper = new Housekeeper("Khadija", "456 Ifrane St", "066123568", 25, manager);
+              Housekeeper housekeeper = new Housekeeper("Zohra", "456 Ifrane St", "066123568", 25, manager);
                      // Example of a managed Realestate
                RealEstate realEstate = new RealEstate("567 Ifrane Street", manager, Type.Villa, false, true, false, true);
                manager.addManagedRealEstate(realEstate);
