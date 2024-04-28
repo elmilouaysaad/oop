@@ -19,7 +19,7 @@ public class App {
     private User currentUser;
     private Scanner scanner;
     private Type type;
-    private List<Comment> comments;
+  
 
     public App(){
 
@@ -29,7 +29,7 @@ public class App {
         this.Users = new ArrayList<>();
         this.currentUser = null;
         this.scanner = new Scanner(System.in);
-        this.comments = new ArrayList<>();
+      
 
     }
     // Registration
@@ -378,7 +378,7 @@ public class App {
           String commentText = scanner.nextLine();
           // create an new comment object 
           Comment comment = new Comment(commentText);
-          comments.add(comment);
+         
           // add it to the realestate chosen within the list
          // RealEstate.get(x-1).setComments(comments);
           // add it to the collection so it can get serialized
