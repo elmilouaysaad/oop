@@ -5,6 +5,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ *
+ * @author mello
+ */
+
 public class AgencyGUI extends JFrame implements ActionListener {
     private JButton managerButton, ownerButton,propretyButton,logoutButton;
     private static int choice=0;

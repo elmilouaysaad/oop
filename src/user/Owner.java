@@ -6,6 +6,7 @@ package user;
 import realestate.*;
 import java.util.ArrayList;
 import java.util.List;
+
 /**
  *
  * @author mello

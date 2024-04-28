@@ -1,6 +1,11 @@
 package user;
 import realestate.*;
 
+/**
+ *
+ * @author mello
+ */
+
 public class Worker extends Renter {
     private String profession;
 
@@ -19,9 +24,7 @@ public class Worker extends Renter {
 
     @Override
     public void rentProperty(RealEstate realEstate) {
-        // Implementation specific to renting a property for a worker
-        System.out.println(getName() + " is renting property for work purposes.");
-        // Additional logic specific to workers
+        System.out.println(getName() + " is renting property.");
     }
 
     @Override
@@ -35,7 +38,7 @@ public class Worker extends Renter {
         System.out.println("Profession: " + profession);
     }
 
-    // Overriding toString method to provide string representation of Worker object
+    // Overriding toString method 
     @Override
     public String toString() {
         return super.toString() + "\nProfession: " + profession;

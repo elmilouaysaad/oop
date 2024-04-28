@@ -1,7 +1,12 @@
 package realestate;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+
+import other.Comment;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -25,6 +30,22 @@ public class RealEstateCollection {
         } else {
             System.out.println("Index out of bounds.");
         }
+    }
+    public void modify(int index, Comment newComment) {
+        if (index >= 0 && index < realEstates.size()) {
+            RealEstate realEstate = realEstates.get(index);
+            realEstate.getComments().add(newComment);
+            realEstates.set(index, realEstate);
+            System.out.println("Comment appended successfully.");
+        } else {
+            System.out.println("Index out of bounds.");
+        }
+    }
+    public void sortRealEstates(Comparator<RealEstate> comparator) {
+        if (comparator == null) {
+            comparator = new RealEstateTypeComparator();
+        }
+        realEstates.sort(comparator);
     }
 
     public void remove(int index) {
@@ -51,25 +72,25 @@ public class RealEstateCollection {
         return result;
     }
 
-   
     public void saveToFile() {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("data/dressup.ser"))) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("file.ser"))) {
             oos.writeObject(realEstates);
-            System.out.println("Cloth data saved successfully.");
+            System.out.println(" data saved successfully.");
         } catch (IOException e) {
-            
+            System.err.println("Error saving data to file: " + e.getMessage());
         }
     }
 
-
     @SuppressWarnings("unchecked")
-    public void loadFromFile() {
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("data/dressup.ser"))) {
+    public List<RealEstate> loadFromFile() {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("file.ser"))) {
             realEstates = (List<RealEstate>) ois.readObject();
-            System.out.println("Cloth data loaded successfully.");
+            System.out.println(" data loaded successfully.");
+            return realEstates;
         } catch (IOException | ClassNotFoundException e) {
-
+            System.err.println("Error loading data to file: " + e.getMessage());
         }
+        return null;
     }
 }
 

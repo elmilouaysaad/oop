@@ -37,5 +37,4 @@ class BuyNow extends Sale {
         return "Buy Now";
     }
 
-    // Additional methods specific to BuyNow, if any
 }

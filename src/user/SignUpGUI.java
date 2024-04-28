@@ -4,6 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+/**
+ *
+ * @author mello
+ */
 
 public class SignUpGUI extends JFrame implements ActionListener {
     private JTextField nameField, passwordField;

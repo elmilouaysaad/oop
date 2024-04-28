@@ -5,6 +5,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ *
+ * @author mello
+ */
+
 public class LoginGUI extends JFrame implements ActionListener {
     private JTextField nameField, passwordField;
     private JButton loginButton;

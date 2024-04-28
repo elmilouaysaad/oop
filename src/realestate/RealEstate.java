@@ -2,11 +2,15 @@ package realestate;
 
 import user.*;
 import enume.*;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+
+import other.Comment;
 import other.Interaction;
 
-public class RealEstate {
+public class RealEstate implements Serializable{
     private String address;
     private Owner owner;
     private Manager manager;
@@ -17,6 +21,7 @@ public class RealEstate {
     private boolean shortTerm; 
     private boolean longTerm; 
     private List<Interaction> interactionLog;
+    private List<Comment> comments;
 
     // Constructor
     public RealEstate(String address, Owner owner, Manager manager, Type type, boolean forSale, boolean forRent, boolean shortTerm, boolean longTerm) {
@@ -48,7 +53,8 @@ public class RealEstate {
         this.forRent = forRent;
         this.shortTerm = shortTerm;
         this.longTerm = longTerm;
-        this.interactionLog = new ArrayList<>();
+        this.comments = new ArrayList<>();
+
     }
     public RealEstate(String address, Type type, boolean forSale, boolean forRent, boolean shortTerm, boolean longTerm) {
         this.address = address;
@@ -57,7 +63,7 @@ public class RealEstate {
         this.forRent = forRent;
         this.shortTerm = shortTerm;
         this.longTerm = longTerm;
-        this.interactionLog = new ArrayList<>();
+        this.comments = new ArrayList<>();
     }
     public Housekeeper getHousekeeper() {
         return housekeeper;
@@ -73,7 +79,13 @@ public class RealEstate {
     public void setAddress(String address) {
         this.address = address;
     }
-
+    public List<Comment> getComments() {
+        return comments;
+    }
+    
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
+    }
     public Owner getOwner() {
         return owner;
     }

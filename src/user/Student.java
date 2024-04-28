@@ -28,8 +28,6 @@ public class Student extends Renter {
   
     @Override
     public void rentProperty(RealEstate realEstate) {
-        // Implement rentProperty method for a student
-        // Add logic here for renting a property by a student
         System.out.println(getName() + " is renting a property at " + realEstate.getAddress() + " for university purposes.");
     }
 

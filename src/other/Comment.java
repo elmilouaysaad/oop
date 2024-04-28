@@ -4,13 +4,14 @@
  */
 package other;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  *
  * @author mello
  */
-public class Comment {
+public class Comment implements Serializable {
     private String comments;
     private Date date;
 
@@ -19,6 +20,10 @@ public class Comment {
         this.comments = comments;
         this.date = date;
        
+    }
+    public Comment(String comments) {
+        this.comments = comments;
+      
     }
 
     public String getComments() {
@@ -32,6 +37,7 @@ public class Comment {
     public Date getDate() {
         return date;
     }
+   
 
     public void setDate(Date date) {
         this.date = date;

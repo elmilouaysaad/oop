@@ -23,9 +23,14 @@ public class Interaction {
         this.description = description;
         this.realEstate = realEstate;
         this.participants = participants;
-        this.comments = new String[0]; // Initialize comments array
+        this.comments = new String[0]; 
     }
-
+    public Interaction(Date date, String description,  Person[] participants) {
+        this.date = date;
+        this.description = description;
+        this.participants = participants;
+        this.comments = new String[0]; 
+    }
     // Getter and setter methods for date, description, realEstate, and participants
 
     public Date getDate() {

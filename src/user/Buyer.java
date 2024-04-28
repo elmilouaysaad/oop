@@ -13,8 +13,9 @@ package user;
 
 public class Buyer extends Person {
   
+    
 
-    public Buyer(String name, String address, String phone,int age,String username, String password) {
+    public Buyer(String name, String address, String phone,int age) {
     super(name, address, phone, age);
     }
 

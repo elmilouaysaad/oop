@@ -7,15 +7,19 @@ import realestate.*;
 
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.List;
+
 import other.*;
 
 public class Manager extends Person {
     private ArrayList<RealEstate> managedRealEstates;
+    private List<Interaction> interactionLog;
 
     // Constructor
     public Manager(String name, String address, String phone, int age) {
         super(name, address, phone, age);
         this.managedRealEstates = new ArrayList<>();
+        this.interactionLog = new ArrayList<>();    
     }
 
     // Method to manage a real estate
@@ -30,15 +34,21 @@ public class Manager extends Person {
             System.out.println(getName() + " does not manage " + realEstate.getClass().getSimpleName());
         }
     }
-    public Interaction interact(Date date, String description, RealEstate realEstate, Person[] participants) {
-        // Create a new interaction
-        Interaction interaction = new Interaction(date, description, realEstate, participants);
+    public Interaction interact(Date date, String description, Person[] participants) {
+      
+        Interaction interaction = new Interaction(date, description, participants);
         
-        // Add the interaction to the real estates history
-        realEstate.addInteraction(interaction);
+        this.addInteraction(interaction);
         return interaction;
     }
 
+ public void addInteraction(Interaction interaction) {
+        interactionLog.add(interaction);
+    }
+
+    public List<Interaction> getInteractionLog() {
+        return interactionLog;
+    }
 
     // Method to display manager information
     @Override
