@@ -396,7 +396,7 @@ public class App {
             scanner.nextLine();
 
             // checks is the list comment is empty
-              if (comments.isEmpty()) {
+              if (RealEstate.get(z-1).getComments().isEmpty()) {
                     System.out.println("This RealEstate has no comments.");
               } else {
                     System.out.println("Comments for RealEstate :");
